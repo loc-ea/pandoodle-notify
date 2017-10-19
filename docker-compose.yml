@@ -1,0 +1,9 @@
+version: "3"
+services:
+  notify:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: python app.py
+    volumes:
+      - .:/app
