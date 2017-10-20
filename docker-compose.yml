@@ -1,9 +1,13 @@
 version: "3"
 services:
   notify:
+    environment:
+      - HOSTS=${HOSTS}
+      - SLACK_API_TOKEN=${SLACK_API_TOKEN}
+      - SLACK_CHANNEL=${SLACK_CHANNEL}
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: python app.py
+    command: python main.py 
     volumes:
       - .:/app
