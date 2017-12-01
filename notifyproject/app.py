@@ -28,8 +28,7 @@ class Notify:
         """
 
         is_sent = True
-        alive_nodes = (len(self.connector.hosts)
-                       - self.connector.get_num_of_dead_nodes())
+        alive_nodes = self.connector.get_num_of_alive_nodes()
         if alive_nodes == 1:
             self.slack.send_message(self.messages['warning'])
         elif alive_nodes == 0:

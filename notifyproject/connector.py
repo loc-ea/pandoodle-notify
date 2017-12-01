@@ -34,3 +34,11 @@ class Connector:
                 dead_nodes += 1
 
         return dead_nodes
+
+    def get_num_of_alive_nodes(self):
+        """Return number of alive nodes in the cluster
+
+        :returns int: number of alive nodes
+        """
+
+        return len(self.hosts) - self.get_num_of_dead_nodes();
